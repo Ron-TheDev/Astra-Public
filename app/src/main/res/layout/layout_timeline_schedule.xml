@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_timeline_schedule"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <!-- Date Header -->
+    <TextView
+        android:id="@+id/tv_timeline_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:text="Date"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- All-Day Events Section -->
+    <LinearLayout
+        android:id="@+id/layout_all_day_events_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="4dp"
+            android:text="All Day"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/layout_all_day_events"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="?android:attr/dividerVertical"
+            android:orientation="vertical"
+            android:showDividers="middle" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="?attr/colorSurfaceVariant" />
+
+    <!-- Timeline ScrollView -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_timeline"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"> <!-- Height determined by TimelineBackgroundView -->
+
+            <com.astra.lifeorganizer.ui.views.TimelineBackgroundView
+                android:id="@+id/timeline_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <FrameLayout
+                android:id="@+id/layout_timeline_events"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="64dp"
+                android:layout_marginRight="8dp"
+                android:clipChildren="false" />
+
+            <com.astra.lifeorganizer.ui.views.TimelineIndicatorView
+                android:id="@+id/timeline_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="4dp" />
+
+        </FrameLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

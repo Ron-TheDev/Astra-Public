@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="priority_options">
+        <item>None</item>
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+
+    <string-array name="repeat_options">
+        <item>None</item>
+        <item>Daily</item>
+        <item>Weekly</item>
+        <item>Monthly</item>
+    </string-array>
+
+    <string-array name="habit_type_options">
+        <item>Positive</item>
+        <item>Negative</item>
+    </string-array>
+
+    <string-array name="reminder_options">
+        <item>None</item>
+        <item>At start of event</item>
+        <item>15 minutes before</item>
+        <item>30 minutes before</item>
+        <item>1 hour before</item>
+        <item>1 day before</item>
+    </string-array>
+    <string-array name="task_duration_options">
+        <item>15 min</item>
+        <item>30 min</item>
+        <item>1 hour</item>
+        <item>Custom</item>
+    </string-array>
+    <string-array name="calendar_view_options">
+        <item>Monthly View</item>
+        <item>Weekly View</item>
+        <item>Agenda View</item>
+    </string-array>
+    <string-array name="habit_chart_options">
+        <item>Month View</item>
+        <item>Week View</item>
+        <item>Year View</item>
+    </string-array>
+
+    <string-array name="settings_dark_mode_options">
+        <item>Auto / System</item>
+        <item>Dark</item>
+        <item>Light</item>
+    </string-array>
+
+    <string-array name="settings_date_format_options">
+        <item>Medium</item>
+        <item>Short</item>
+        <item>ISO</item>
+        <item>Long</item>
+    </string-array>
+
+    <string-array name="settings_time_format_options">
+        <item>12-hour</item>
+        <item>24-hour</item>
+    </string-array>
+
+    <string-array name="settings_default_reminder_options">
+        <item>None</item>
+        <item>At start of event</item>
+        <item>15 minutes before</item>
+        <item>30 minutes before</item>
+        <item>1 hour before</item>
+        <item>1 day before</item>
+    </string-array>
+
+    <string-array name="settings_default_priority_options">
+        <item>None</item>
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+
+    <string-array name="settings_default_duration_options">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>All day</item>
+        <item>Custom</item>
+    </string-array>
+
+    <string-array name="settings_accent_options">
+        <item>Blue</item>
+        <item>Purple</item>
+        <item>Red</item>
+        <item>Orange</item>
+        <item>Green</item>
+    </string-array>
+
+    <string-array name="settings_auto_import_options">
+        <item>Disabled</item>
+        <item>Daily</item>
+        <item>Every 3 days</item>
+        <item>Weekly</item>
+    </string-array>
+
+    <string-array name="settings_week_start_options">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Saturday</item>
+    </string-array>
+
+    <string-array name="todo_view_mode_options">
+        <item>Current tasks</item>
+        <item>Task completion history</item>
+    </string-array>
+    <string-array name="settings_calendar_view_state_options">
+        <item>Last used view</item>
+        <item>Schedule</item>
+        <item>Agenda</item>
+        <item>Events list</item>
+    </string-array>
+</resources>

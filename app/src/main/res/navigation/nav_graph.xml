@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/HomepageFragment">
+
+    <fragment
+        android:id="@+id/HomepageFragment"
+        android:name="com.astra.lifeorganizer.ui.HomepageFragment"
+        android:label="Astra"
+        tools:layout="@layout/fragment_homepage" />
+        
+    <fragment
+        android:id="@+id/TodoListFragment"
+        android:name="com.astra.lifeorganizer.ui.TodoListFragment"
+        android:label="Todo List"
+        tools:layout="@layout/fragment_todo_list" />
+        
+    <fragment
+        android:id="@+id/CalendarFragment"
+        android:name="com.astra.lifeorganizer.ui.CalendarFragment"
+        android:label="Calendar"
+        tools:layout="@layout/fragment_calendar" />
+        
+    <fragment
+        android:id="@+id/HabitTrackerFragment"
+        android:name="com.astra.lifeorganizer.ui.HabitTrackerFragment"
+        android:label="Habit Tracker"
+        tools:layout="@layout/fragment_habit_tracker" />
+        
+    <fragment
+        android:id="@+id/SettingsFragment"
+        android:name="com.astra.lifeorganizer.ui.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/RecapPreviewFragment"
+        android:name="com.astra.lifeorganizer.ui.RecapPreviewFragment"
+        android:label="Recap Preview"
+        tools:layout="@layout/fragment_recap_preview">
+        <argument
+            android:name="initial_mode"
+            app:argType="string"
+            android:defaultValue="weekly" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/WidgetPickerFragment"
+        android:name="com.astra.lifeorganizer.ui.WidgetPickerFragment"
+        android:label="Widget Picker"
+        tools:layout="@layout/fragment_widget_picker" />
+</navigation>

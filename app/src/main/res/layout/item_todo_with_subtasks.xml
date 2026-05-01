@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:id="@+id/item_root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="top">
+
+        <!-- Left: vertical progress bar -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginEnd="12dp">
+
+            <CheckBox
+                android:id="@+id/cb_complete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!-- Vertical ProgressBar -->
+            <ProgressBar
+                android:id="@+id/pb_subtasks"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="8dp"
+                android:layout_height="72dp"
+                android:layout_marginTop="4dp"
+                android:layout_gravity="center_horizontal"
+                android:rotation="270"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/progress_vertical" />
+
+        </LinearLayout>
+
+        <!-- Center: title, note, label, due date, subtask fraction -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="?android:attr/textColorPrimary" />
+
+            <TextView
+                android:id="@+id/tv_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="?android:attr/textColorSecondary"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:id="@+id/tv_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="2dp"
+                    android:background="@drawable/bg_speed_dial_label"
+                    android:textColor="?attr/colorOnSurface"
+                    android:visibility="gone"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/tv_due_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="?attr/colorPrimary"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <!-- Subtask progress fraction: "2 / 5 subtasks" -->
+            <TextView
+                android:id="@+id/tv_subtask_fraction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginTop="6dp"
+                android:textColor="?android:attr/textColorSecondary" />
+
+            <!-- Expanded subtask list -->
+            <LinearLayout
+                android:id="@+id/layout_subtask_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btn_overflow"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_more"
+            android:contentDescription="Options" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

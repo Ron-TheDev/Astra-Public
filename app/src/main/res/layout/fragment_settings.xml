@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/settings_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/settings_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_settings_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="Settings"
+            android:textColor="?attr/colorOnSurface"
+            android:textAppearance="?attr/textAppearanceHeadlineMedium" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_settings_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:paddingBottom="16dp"
+            android:text="Pages, appearance, labels, imports, defaults, summaries, and data."
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+        <!-- Testing & Debug Group -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_debug"
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:strokeColor="?attr/colorOutlineVariant"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Testing &amp; Debug"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:paddingBottom="12dp"
+                    android:text="Internal tools for recap and alarm systems."
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/colorOutlineVariant"/>
+
+                <!-- Test Alarm Overlay Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Test Alarm Overlay"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textAppearance="?attr/textAppearanceTitleSmall" />
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Open the full-screen alarm screen immediately."
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:textAppearance="?attr/textAppearanceBodySmall" />
+                    </LinearLayout>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_test_alarm_overlay"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Test"
+                        app:paddingStart="12dp"
+                        app:paddingEnd="12dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/colorOutlineVariant"/>
+
+                <!-- Test 30s Alarm Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Test 30s Alarm"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textAppearance="?attr/textAppearanceTitleSmall" />
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Schedules a high-priority alarm for 30 seconds from now."
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:textAppearance="?attr/textAppearanceBodySmall" />
+                    </LinearLayout>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_test_30s_alarm"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Schedule"
+                        app:paddingStart="12dp"
+                        app:paddingEnd="12dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/colorOutlineVariant"/>
+
+
+                <!-- Recap Recap Tests -->
+                <include android:id="@+id/row_test_weekly_recap" layout="@layout/item_settings_row" />
+                <include android:id="@+id/row_test_monthly_recap" layout="@layout/item_settings_row" />
+                <include android:id="@+id/row_test_yearly_recap" layout="@layout/item_settings_row" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorOutlineVariant"/>
+
+
+        <!-- Page Visibility Group -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_pages"
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:strokeColor="?attr/colorOutlineVariant"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Page Visibility"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:paddingBottom="12dp"
+                    android:text="Keep at least one functional page visible."
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <!-- Page Visibility Rows -->
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_page_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Landing feed"
+                    app:rowTitle="Home">
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_page_home"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_page_todo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Tasks and due items"
+                    app:rowTitle="Todo List">
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_page_todo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_page_habits"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Streaks and habit detail"
+                    app:rowTitle="Habits">
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_page_habits"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_page_calendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Timeline and agenda"
+                    app:rowTitle="Calendar">
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_page_calendar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_page_settings_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:rowSubtitle="Always visible"
+                    app:rowTitle="Settings">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Enabled"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textAppearance="?attr/textAppearanceBodySmall" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorOutlineVariant"/>
+
+
+        <!-- Appearance Group -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_appearance"
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:strokeColor="?attr/colorOutlineVariant"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Appearance"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:paddingBottom="12dp"
+                    android:text="System colors or a manual accent."
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <!-- Appearance Rows -->
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_dynamic_theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="On uses system colors automatically."
+                    app:rowTitle="Material You dynamic theming">
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_dynamic_theme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_accent_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Used when dynamic theming is off."
+                    app:rowTitle="Accent color">
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chip_group_accent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:selectionRequired="true"
+                        app:singleSelection="true" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_dark_mode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="System, dark, or light."
+                    app:rowTitle="Dark mode">
+                    <Spinner
+                        android:id="@+id/spinner_dark_mode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_black_theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Use the AMOLED black palette when dark mode is enabled."
+                    app:rowTitle="Black theme">
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_black_theme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_date_format"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Controls date display across the app."
+                    app:rowTitle="Date format">
+                    <Spinner
+                        android:id="@+id/spinner_date_format"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_time_format"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="12-hour or 24-hour display."
+                    app:rowTitle="Time format">
+                    <Spinner
+                        android:id="@+id/spinner_time_format"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Calendar Group -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_calendar"
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:strokeColor="?attr/colorOutlineVariant"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Calendar"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:paddingBottom="12dp"
+                    android:text="Import events and customize the timeline view."
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <!-- Calendar Rows -->
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_import_android_calendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Read events from the local device calendar."
+                    app:rowTitle="Import Android calendar">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_import_android_calendar"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Import" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_import_ics_file"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Pick a calendar file from storage."
+                    app:rowTitle="Import .ics file">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_import_ics_file"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pick file" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_import_birthdays"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Imports birthdays as all-day events in the birthdays label."
+                    app:rowTitle="Read birthdays from contacts">
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_import_birthdays"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_auto_import_interval"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="How often to sync local calendar events."
+                    app:rowTitle="Automatic import timer">
+                    <Spinner
+                        android:id="@+id/spinner_auto_import"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_show_week_numbers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Display week numbers in the calendar grid."
+                    app:rowTitle="Show week numbers">
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_show_week_numbers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_week_start"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Choose the first day shown in weekly grids."
+                    app:rowTitle="Start of week">
+                    <Spinner
+                        android:id="@+id/spinner_week_start"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_calendar_show_tasks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Display tasks with start time and duration."
+                    app:rowTitle="Show tasks in calendar">
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_show_tasks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_calendar_show_habits"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Display habits with start time and duration."
+                    app:rowTitle="Show habits in calendar">
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_show_habits"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Behavior Group -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_behavior"
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:strokeColor="?attr/colorOutlineVariant"
+            app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Behavior"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceTitleMedium" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:paddingBottom="12dp"
+                    android:text="Automatic item type conversions."
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_auto_conversion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Allows tasks to become habits if repeating, or events if timed."
+                    app:rowTitle="Automatic type conversion">
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_auto_conversion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Label Manager Group -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_labels"
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:strokeColor="?attr/colorOutlineVariant"
+            app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Label Manager"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceTitleMedium" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:paddingBottom="12dp"
+                    android:text="Rename, merge, or delete labels used by live items."
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_manage_labels"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Choose a label and apply an action to upcoming events, active habits, and open tasks."
+                    app:rowTitle="Manage labels">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_manage_labels"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Open" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Defaults Group -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_defaults"
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:strokeColor="?attr/colorOutlineVariant"
+            app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Defaults"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceTitleMedium" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:paddingBottom="12dp"
+                    android:text="Pre-fill new items with your preferred values."
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_default_reminder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Used when creating a new task or event."
+                    app:rowTitle="Default reminder">
+                    <Spinner
+                        android:id="@+id/spinner_default_reminder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_default_priority"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Used when the item is first created."
+                    app:rowTitle="Default priority">
+                    <Spinner
+                        android:id="@+id/spinner_default_priority"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_default_duration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Used when events do not define a length."
+                    app:rowTitle="Default event duration">
+                    <Spinner
+                        android:id="@+id/spinner_default_duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_default_recurrence"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Pre-fills recurrence when repeat is enabled."
+                    app:rowTitle="Default habit/task repeat">
+                    <Spinner
+                        android:id="@+id/spinner_default_recurrence"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_default_calendar_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Initial view state when opening the calendar."
+                    app:rowTitle="Default calendar view">
+                    <Spinner
+                        android:id="@+id/spinner_default_calendar_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Summaries Group -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_summaries"
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:strokeColor="?attr/colorOutlineVariant"
+            app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Summaries"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceTitleMedium" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:paddingBottom="12dp"
+                    android:text="Morning brief and evening wrap-up notifications."
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_morning_brief"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Send a daily morning summary."
+                    app:rowTitle="Morning brief">
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_morning_brief"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_morning_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Tap to choose a time."
+                    app:rowTitle="Morning time">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_morning_time"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="08:00" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_evening_wrap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Send a daily end-of-day summary."
+                    app:rowTitle="Evening wrap">
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_evening_wrap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_evening_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Tap to choose a time."
+                    app:rowTitle="Evening time">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_evening_time"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="18:00" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Alarm Group -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_alarm"
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:strokeColor="?attr/colorOutlineVariant"
+            app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Alarm Settings"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceTitleMedium" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:paddingBottom="12dp"
+                    android:text="Customize your wake-up experience."
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_alarm_ringtone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Tap to change ringtone."
+                    app:rowTitle="Alarm ringtone">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_alarm_ringtone"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Change" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Privacy Group -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_privacy"
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:strokeColor="?attr/colorOutlineVariant"
+            app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Privacy"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceTitleMedium" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:paddingBottom="12dp"
+                    android:text="Lock the app and keep screenshots private."
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_biometric_lock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Require biometric or device credential unlock when the app opens."
+                    app:rowTitle="Biometric app lock">
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_biometric_lock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_prevent_screenshots"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Block screenshots and screen recording inside the app."
+                    app:rowTitle="Prevent screenshots">
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_prevent_screenshots"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_privacy_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="No network required."
+                    app:rowTitle="Offline-only">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Local-first"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textAppearance="?attr/textAppearanceBodySmall" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Widgets Group -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_widgets"
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:strokeColor="?attr/colorOutlineVariant"
+            app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Widgets"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceTitleMedium" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:paddingBottom="12dp"
+                    android:text="Preview the available widgets before using them."
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_widget_picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Open the gallery of widget previews."
+                    app:rowTitle="Widget picker">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_widget_picker"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Open" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Data Management Group -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_data"
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:strokeColor="?attr/colorOutlineVariant"
+            app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Data Management"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceTitleMedium" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:paddingBottom="12dp"
+                    android:text="Export, restore, and clean up local data."
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_export_backup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Save a JSON backup of all local data."
+                    app:rowTitle="Export backup">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_export_backup"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Export" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_restore_backup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Load a JSON backup file."
+                    app:rowTitle="Restore backup">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_restore_backup"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Restore" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_export_calendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Create an .ics export for your items."
+                    app:rowTitle="Export calendar">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_export_calendar"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Export" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_purge_archived"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Remove archived items from the local database."
+                    app:rowTitle="Purge archived items">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_purge_archived"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Purge" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_reset_app"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Erase all local data and start over."
+                    app:rowTitle="Reset app">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_reset_app"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reset" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Miscellaneous Group -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_misc"
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:strokeColor="?attr/colorOutlineVariant"
+            app:strokeWidth="1dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Miscellaneous"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textAppearance="?attr/textAppearanceTitleMedium" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:paddingBottom="12dp"
+                    android:text="Small quality-of-life settings and app info."
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_haptics"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Enable touch feedback for taps."
+                    app:rowTitle="Haptics">
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switch_haptics"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+                <com.astra.lifeorganizer.ui.views.SettingsRowView
+                    android:id="@+id/row_app_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:rowSubtitle="Installed build"
+                    app:rowTitle="App version">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_app_version"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textAppearance="?attr/textAppearanceBodySmall" />
+                </com.astra.lifeorganizer.ui.views.SettingsRowView>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

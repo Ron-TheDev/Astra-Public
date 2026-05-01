@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="astra_blue_primary">#FF2563EB</color>
+    <color name="astra_blue_on_primary">#FFFFFFFF</color>
+    <color name="astra_blue_primary_container">#FFDBEAFE</color>
+    <color name="astra_blue_on_primary_container">#FF1E3A8A</color>
+
+    <color name="astra_purple_primary">#FF7C3AED</color>
+    <color name="astra_purple_on_primary">#FFFFFFFF</color>
+    <color name="astra_purple_primary_container">#FFE9D5FF</color>
+    <color name="astra_purple_on_primary_container">#FF4C1D95</color>
+
+    <color name="astra_red_primary">#FFDC2626</color>
+    <color name="astra_red_on_primary">#FFFFFFFF</color>
+    <color name="astra_red_primary_container">#FFFEE2E2</color>
+    <color name="astra_red_on_primary_container">#FF7F1D1D</color>
+
+    <color name="astra_orange_primary">#FFF97316</color>
+    <color name="astra_orange_on_primary">#FFFFFFFF</color>
+    <color name="astra_orange_primary_container">#FFFFEDD5</color>
+    <color name="astra_orange_on_primary_container">#FF9A3412</color>
+
+    <color name="astra_green_primary">#FF16A34A</color>
+    <color name="astra_green_on_primary">#FFFFFFFF</color>
+    <color name="astra_green_primary_container">#FFD1FAE5</color>
+    <color name="astra_green_on_primary_container">#FF14532D</color>
+</resources>

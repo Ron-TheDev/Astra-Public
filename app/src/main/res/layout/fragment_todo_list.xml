@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_search_bar"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:startIconDrawable="@android:drawable/ic_menu_search"
+                    app:hintEnabled="false"
+                    app:boxBackgroundMode="none">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Search tasks"
+                        android:maxLines="1"
+                        android:inputType="text"
+                        android:background="?attr/colorSurface"
+                        android:paddingVertical="10dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btn_todo_mode"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_more"
+                android:contentDescription="View options"
+                app:tint="?attr/colorOnSurface" />
+        </LinearLayout>
+
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_marginTop="12dp">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_filters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleSelection="false"
+            app:selectionRequired="false"
+            app:chipSpacingHorizontal="8dp"
+            app:chipSpacingVertical="8dp">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_filter_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:text="All" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_filter_sort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:text="Sort" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_filter_tags"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:text="Tags" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_filter_due"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:text="Due" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_filter_priority"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:text="Priority" />
+        </com.google.android.material.chip.ChipGroup>
+    </LinearLayout>
+    </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/tv_empty_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="No items found"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_todos"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="16dp"
+            android:clipToPadding="false"
+            android:paddingBottom="88dp" />
+
+    </LinearLayout>
+
+    <include layout="@layout/layout_selection_toolbar" />
+
+</FrameLayout>
