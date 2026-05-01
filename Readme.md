@@ -1,6 +1,6 @@
 # Astra – Android Life Oragnizer App
 
-``` This repository is several commits behind
+``` This repository is several commits behind ```
 
 Astra is a **local-first Android productivity app meant to help manage your daily life. It combines **tasks, habits, and calendar scheduling** into a single offline-capable experience. It follows an MVVM architecture, uses a Room DB and implements a **Material 3 UI**.
 ![Screenshot](./Showcase/HomepageDark.jpg)
